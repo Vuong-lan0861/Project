@@ -18,14 +18,7 @@ function login(event) {
         for (let i = 0; i < users.length; i++) {
 
             if (users[i].email == email && users[i].password == password) {
-                // localStorage.setItem("users", users[i].id)
-                let obj = {
-                    id: users[i].id,
-                    email: email,
-                    password: password,
-                }
-                localStorage.setItem("currentUser",JSON.stringify(obj));
-                
+                localStorage.setItem("usersId", users[i].id)
 
                 // Khi đăng kí thành công thì hiển thị "bạn đã đăng kí thanhf công"
                 document.getElementById("success").style.display = "block";

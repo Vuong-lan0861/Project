@@ -8,7 +8,7 @@ const VND = new Intl.NumberFormat('vi-VN', {
     currency: 'VND',
 });
 function renderCart() {
-    let checkLogin = localStorage.getItem("userId");
+    let checkLogin = localStorage.getItem("usersId");
     console.log(checkLogin);
     let users = JSON.parse(localStorage.getItem("users"));
     if (checkLogin != null) {

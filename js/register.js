@@ -29,6 +29,7 @@ function uuid() {
 }
 // Tạo Function đăng kí
 let users = JSON.parse(localStorage.getItem("users")) || [];
+
 function register(event) {
     event.preventDefault();
     let email = document.getElementById("email").value;
@@ -46,10 +47,18 @@ function register(event) {
     }
 
 
-    let check = users.filter((item) => {
-        return item.email == email;
+    // let check = users.filter((item) => {
+    //     return item.email == email;
+    // }
+    // )
+    let check = false;
+    for (let i = 0; i < users.length; i++) {
+        if (users[i].email == email) {
+            check = true;
+        }
+
     }
-    )
+
     if (displayName === "" || email === "" || phone === "" || password === "") {
         document.getElementById("lack").style.display = "block";
         document.getElementById("success").style.display = "none";
@@ -57,11 +66,11 @@ function register(event) {
 
     }
     else {
-        if (check.length == 0) {
+        if (check == false) {
             // Nếu check == 0 thì tài khoản chưa được đăng kí
             users.push(obj);
             localStorage.setItem("users", JSON.stringify(users));
-           
+
             document.getElementById("success").style.display = "block";
             document.getElementById("lack").style.display = "none";
             document.getElementById("error").style.display = "none";

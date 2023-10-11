@@ -2,7 +2,7 @@
 
 // ==================MAIN AREA==============================
 // Hiển thị danh sách người dùng
-let productList = JSON.parse(localStorage.getItem("productList"));
+
 
 function renderUsers() {
   let checkUser = localStorage.getItem("users");
@@ -62,7 +62,7 @@ function renderProducts() {
 
   let text = "";
   for (let i = 0; i < productList.length; i++) {
-    alert(productList);
+    
     text += `
                 
                     <tr>
@@ -77,7 +77,7 @@ function renderProducts() {
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
                         <i onclick="saveEditedProduct(${productList[i].id})" class="fa-solid fa-pen-to-square"></i>
                         </button>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="js-modal modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -100,7 +100,7 @@ function renderProducts() {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onclick ="saveEdit()" type="button" class="btn btn-primary">Save</button>
+        <button onclick = "saveEdit(${productList[i].id})" type="button" class="js-btn-save btn btn-primary">Save</button>
       </div>
     </div>
   </div>
@@ -115,10 +115,7 @@ function renderProducts() {
     `
             ${text}
             `
-            setTimeout(()=>{
-              alert(productList);
-            },3000)
-
+            
 }
 // Thêm chức năng xoá users theo id
 function deleteUsers(userId) {
@@ -152,7 +149,7 @@ function deleteProducts(productId) {
 // function chỉnh sửa product theo id
 
 function saveEditedProduct(productId) {
-  alert(productId);
+  
   localStorage.setItem("keyEdit", productId)
   let productList = JSON.parse(localStorage.getItem("productList"));
   // Tìm vị trí sản phẩm trong danh sách
@@ -161,34 +158,60 @@ function saveEditedProduct(productId) {
   price.value = productList[productIndex].price;
   let stock = document.getElementsByClassName("stock")[0];
   stock.value = productList[productIndex].stock;
-
+// document.querySelector(".js-btn-save").addEventListener("click",()=>{
+//   console.log("gygui");
+//   let keyEdit = localStorage.getItem("keyEdit");
+//     console.log(keyEdit);
+    
+//     let price = document.getElementsByClassName("price")[0].value;
+//     let stock = document.getElementsByClassName("stock")[0].value;
+//     if (keyEdit != null) {
+//       let productList = JSON.parse(localStorage.getItem("productList"));
+//       let productIndex = productList.findIndex(product => product.id == keyEdit);
+//       console.log(productIndex);
+      
+//       productList[productIndex].stock = stock;
+//       productList[productIndex].price = price;
+      
+  
+//       localStorage.setItem("productList", JSON.stringify(productList));
+      
+      
+//     }
+//     document.querySelector(".modal-backdrop").classList.remove("show");
+    
+   
+//     renderProducts();
+// })
+  
 
 }
 
 // FUNCTION SAVE EDIT
 
-function saveEdit() {
- try {
+function saveEdit(productId) {
+
   let keyEdit = localStorage.getItem("keyEdit");
+  console.log(keyEdit);
+  
   let price = document.getElementsByClassName("price")[0].value;
   let stock = document.getElementsByClassName("stock")[0].value;
   if (keyEdit != null) {
-    // let productList = JSON.parse(localStorage.getItem("productList"));
-    let productIndex = productList.findIndex(product => product.id === keyEdit);
-    alert(productList);
-    // productList[productIndex].stock = stock;
-    // productList[productIndex].price = price;
-
+    let productList = JSON.parse(localStorage.getItem("productList"));
+    let productIndex = productList.findIndex(product => product.id == keyEdit);
+    console.log(productIndex);
+    
+    productList[productIndex].stock = stock;
+    productList[productIndex].price = price;
+    
 
     localStorage.setItem("productList", JSON.stringify(productList));
-    renderProducts();
-
+    
+    
   }
-  document.getElementById("exampleModal").style.display = "none";
- } catch (error) {
-  alert(error)
- }
-
-
+  document.querySelector(".modal-backdrop").classList.remove("show");
+  
+ 
+  renderProducts();
+  // localStorage.removeItem("keyEdit");
 }
-

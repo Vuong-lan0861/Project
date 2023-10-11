@@ -46,9 +46,14 @@
 
 .header .header__topbar .header__list-icon .cart{
     display: none;
-    
+    position: relative;
 }
-
+.header .header__topbar .header__list-icon
+/* .count{
+    position: absolute;
+    top:0;
+    right: 0;
+} */
 
 .header .header__topbar .header__list-icon .header_user {
     position: relative;

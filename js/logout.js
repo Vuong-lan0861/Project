@@ -14,7 +14,7 @@ let logOut = () => {
     //     localStorage.removeItem('userId');
     // }
       
-            localStorage.removeItem("currentUser");
+            localStorage.removeItem("usersId");
             document.getElementById("registerUser").style.color = "white";
             window.location.href = "../pages/login.html";
             

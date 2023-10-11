@@ -34,26 +34,38 @@ window.onscroll = () => {
 // Hàm kiểm tra xem user đã login hay chưa
 
 function IsLogged() {
-    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    let checkLogin = localStorage.getItem("usersId");
+    console.log(checkLogin);
+    let users = JSON.parse(localStorage.getItem("users"));
 
-    if (currentUser) {
-        document.getElementById("registerUser").style.color = "rgba(11, 138, 235, 0.942)";
-        document.getElementById("logout").style.display = "block";
-        document.getElementById("loginRegister").style.display = "none";
-
-            if (currentUser.email == "vuonglan0861@gmail.com" && currentUser.password == "12345") {
-                document.getElementById("addmin").style.display = "block";
-                document.getElementById("cart").style.display = "none";
-            } else {
-                document.getElementById("addmin").style.display = "none";
-                document.getElementById("cart").style.display = "block";
-            }
+    if (checkLogin != null) {
         
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].id == checkLogin) {
+
+                document.getElementById("registerUser").style.color = "rgba(11, 138, 235, 0.942)";
+                document.getElementById("logout").style.display = "block";
+                document.getElementById("loginRegister").style.display = "none";
+
+                if (users[i].email == "vuonglan0861@gmail.com" && users[i].password == "12345") {
+                    document.getElementById("addmin").style.display = "block";
+                    document.getElementById("cart").style.display = "none";
+                    
+                }
+                else {
+                    document.getElementById("addmin").style.display = "none";
+                    document.getElementById("cart").style.display = "block";
+                }
+                
+            }
+        }
     } else {
         document.getElementById("logout").style.display = "none";
         document.getElementById("loginRegister").style.display = "block";
     }
 }
-// IsLogged();
+
 window.onload = IsLogged;
+
+
 

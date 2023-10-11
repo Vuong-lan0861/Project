@@ -331,85 +331,8 @@ function renderProducts(productList) {
     document.getElementsByClassName("grid-container")[0].innerHTML = text
 }
 renderProducts(products);
-// Function đi mua hàng
-function addToCart(productId) {
-    // console.log("productId", productId);
-    let checkLogin = localStorage.getItem("userId");
-    // biến checkLogin có giá trị là id của người dùng
-    // lấy toàn bộ users ra
-    let users = JSON.parse(localStorage.getItem("users"));
-    // lấy toàn bộ danh sách sản phẩm
-    let products = JSON.parse(localStorage.getItem("productList"));
-    if (checkLogin) {
-        // đã đăng nhập mới cho đi mua hàng
-        // đi mua hàng dựa vào userId 
-        // alert("đi mua hàng bình thường!")
-        // mình có nhiều user thì phải lấy ra giỏ của user có id == checkLogin
-        /*   let cartUser=users.filter((item)=>{
-              return item.id==checkLogin;
-          })
-          console.log("cartUser", cartUser); */
-        for (let i = 0; i < users.length; i++) {
-            if (users[i].id == checkLogin) {
-                // lấy ra giỏ hàng của user vừa đăng nhập
-                //users[i].cart
-                for (let j = 0; j < products.length; j++) {
-                    if (products[j].id == productId) {
-                        //... toán tử spread
-                        // trước khi push phải xem sản phẩm đó đã có trong giỏ hàng hay chưa
-                        // nếu có rồi thì tăng số lượng thôi.
-                        // chưa có thì push vào bình thường
-                        // users[i].cart.push({ ...products[j],quantity:1 });
-                        // localStorage.setItem("users",JSON.stringify(users));
-                        let result = users[i].cart.filter((item) => {
-                            return item.id == productId;
-                        })
-                        if (result.length == 0) {
-                            users[i].cart.push({ ...products[j], quantity: 1 });
-                            localStorage.setItem("users", JSON.stringify(users));
-                            showCount();
-                        } else {
-                            // users[i].cart[j].quantity == ++users[i].cart[j].quantity;
-                            // localStorage.setItem("users", JSON.stringify(users));
-                            for (let k = 0; k < users[i].cart.length; k++) {
-                                if (users[i].cart[k].id == productId) {
-                                    users[i].cart[k].quantity = ++users[i].cart[k].quantity;
-                                    localStorage.setItem("users", JSON.stringify(users));
-                                    showCount();
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
 
-        }
-    } else {
-        // chưa đăng nhập không thể mua hàng
-        alert("bạn phải đăng nhập để đi mua hàng!")
-    }
-}
 
-// function render count
-function showCount() {
-    let checkLogin = localStorage.getItem("userId");
-    let users = JSON.parse(localStorage.getItem("users"));
-    if (checkLogin) {
-        for (let i = 0; i < users.length; i++) {
-            if (users[i].id == checkLogin) {
-                //users[i].cart
-                let count = 0;
-                for (let j = 0; j < users[i].cart.length; j++) {
-                    count += users[i].cart[j].quantity;
-                }
-                document.getElementsByClassName("count")[0].innerHTML = count;
-            }
-        }
-
-    }
-}
-showCount();
 
 // function sắp xếp giá từ thấp đến cao
 
@@ -471,6 +394,3 @@ function myFunction(lan) {
     }
 
 }
-
-// funcion Lọc sản phẩm
-
