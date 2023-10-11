@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListProduct</title>
+    <!-- Link bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <!-- Link css -->
+    <link rel="stylesheet" href="../css/ListProduct.css">
+    <!-- Link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- link css islogin -->
+    <link rel="stylesheet" href="../css/islogin.css">
+
+</head>
+
+<body>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- <div class="container-fluid"> -->
+        <!-- Header Area -->
+        <div class="row">
+            <div class="col-12">
+                <div class="header__topbar d-flex justify-content-between">
+                    <div class="header__logo">
+                        <img src="../assest/image/3.png" alt="">
+                    </div>
+                    <div class="header__text">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <span id="headerText">Enjoy a free gift with your purchase</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+
+                    <div class="header__list-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <div id="cart" class="cart">
+                            <a style="color: white;" href="./cart.html">
+                                <i class="fa-solid fa-cart-shopping">
+                                    <sup class="count"></sup>
+                                </i>
+                            </a>
+                        </div>
+                        <div class="header_user">
+                            <i id="registerUser" class="fa-solid fa-user"></i>
+                            <div class="header_user_hover">
+                                <div id="loginRegister" class="login-register">
+                                    <a href="./login.html">Login</a>
+                                    <a href="./register.html">Register</a>
+                                </div>
+                                <div id="logout" class="logout">
+                                    <a onclick="logOut()" href="../pages/login.html">Log out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="header__bottombar ">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link-custom nav-link active" aria-current="page" href="../index.html">New</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-custom nav-link" href="../pages/ListProduct.html">Collections</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link-custom nav-link" href="#">Gift</a>
+                        </li>
+                        <li id="addmin" class="addmin nav-item">
+                            <a class="nav-link-custom nav-link" href="../pages/addminpage.html">Addmin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <!-- Main Area -->
+    <main>
+        <div class="container">
+            <div class="main__top">
+                <ul class="breadcrumb">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/danh-muc-san-pham">Collections</a></li>
+                </ul>
+            </div>
+            <!-- Filter by html -->
+            <div class="main__bottom row">
+                <div class="main-left col-2">
+                    <div class="title-filter">
+                        <h2>Filter by</h2>
+                    </div>
+                    <div class="sidebar-left">
+                        <div class="check-list-title">
+                            <h6>Concern</h6>
+                            <i class="fas fa-minus" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1"
+                                aria-expanded="false"></i>
+                        </div>
+                        <form class="check-list collapse multi-collapse" id="multiCollapseExample1">
+                            <!-- ...Thêm checkbox items 1-13 ở đây... -->
+                            <label for="item1"><input type="checkbox" id="item1" name="items" value="Item 1">
+                                Dullness</label><br>
+                            <label for="item2"><input type="checkbox" id="item2" name="items" value="Item 2"> Texttural
+                                Irregularities</label><br>
+                            <label for="item3"><input type="checkbox" id="item3" name="items" value="Item 3"> Signs Of
+                                Aging</label><br>
+                            <label for="item4"><input type="checkbox" id="item4" name="items" value="Item 4">
+                                Dryness</label><br>
+                            <label for="item5"><input type="checkbox" id="item5" name="items" value="Item 5"> Uneven
+                                Skin Tone</label><br>
+                            <label for="item7"><input type="checkbox" id="item5" name="items" value="Item 7">
+                                Puffiness</label><br>
+                            <label for="item8"><input type="checkbox" id="item5" name="items" value="Item 8"> Dark
+                                Circles</label><br>
+                            <label for="item9"><input type="checkbox" id="item5" name="items" value="Item 9"> Visible
+                                Shine</label><br>
+                            <label for="item10"><input type="checkbox" id="item5" name="items" value="Item 10"> Crow's
+                                Feet</label><br>
+                            <label for="item11"><input type="checkbox" id="item5" name="items" value="Item 11">
+                                Cleansing</label><br>
+                            <label for="item12"><input type="checkbox" id="item5" name="items" value="Item 12"> Look Of
+                                Redness</label><br>
+                            <label for="item13"><input type="checkbox" id="item5" name="items" value="Item 13"> Signs Of
+                                Congestion</label><br>
+
+                        </form>
+                        <hr>
+                        <div class="check-list-title">
+                            <h6>Active Ingredient</h6>
+                            <i class="fas fa-minus" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                                aria-expanded="false"></i>
+                        </div>
+                        <form class="check-list collapse" id="collapseExample">
+                            <!-- ...Thêm checkbox items 14-18 ở đây... -->
+                            <label for="item14"><input type="checkbox" id="item14" name="items" value="Item 14">
+                                Peptides</label><br>
+                            <label for="item15"><input type="checkbox" id="item15" name="items" value="Item 15">
+                                Hydrators</label><br>
+                            <label for="item16"><input type="checkbox" id="item16" name="items" value="Item 16">
+                                Niaciamide</label><br>
+                            <label for="item17"><input type="checkbox" id="item17" name="items" value="Item 17">
+                                Hyaluronic Acid</label><br>
+                            <label for="item18"><input type="checkbox" id="item18" name="items" value="Item 18">
+                                Squalane</label><br>
+
+                        </form>
+                        <hr>
+                        <div class="check-list-title">
+                            <h6>Product Type</h6>
+                            <i class="fas fa-minus btn-primary" data-bs-toggle="collapse"
+                                data-bs-target="#multiCollapseExample2" aria-expanded="false"
+                                aria-controls="multiCollapseExample2"></i>
+                        </div>
+
+                        <form class="check-list collapse multi-collapse" id="multiCollapseExample2">
+                            <!-- ...Thêm checkbox items 19-23 ở đây... -->
+                            <label for="item19"><input type="checkbox" id="item19" name="items"
+                                    value="Item 19">serums</label><br>
+                            <label for="item20"><input type="checkbox" id="item20" name="items"
+                                    value="Item 20">tones</label><br>
+                            <label for="item21"><input type="checkbox" id="item21" name="items" value="Item 21">Facial
+                                Cleansers</label><br>
+
+                        </form>
+
+                        <hr>
+                        <div class="check-list-title">
+                            <h6>Time of Use</h6>
+                            <i class="fas fa-minus btn-primary" data-bs-toggle="collapse"
+                                data-bs-target="#multiCollapseExample3" aria-expanded="false"
+                                aria-controls="multiCollapseExample3"></i>
+                        </div>
+
+                        <form class="check-list collapse multi-collapse" id="multiCollapseExample3">
+                            <!-- ...Thêm checkbox items 19-23 ở đây... -->
+                            <label for="item19"><input type="checkbox" id="item19" name="items" value="Item 19">
+                                AM</label><br>
+                            <label for="item20"><input type="checkbox" id="item20" name="items" value="Item 20">
+                                PM</label><br>
+
+                        </form>
+                        <!-- Tiếp tục thêm các form khác ở đây... -->
+                    </div>
+                </div>
+
+                <!-- Best Sllers html -->
+                <div class="main-right col-10">
+                    <div class="main-right-top d-flex justify-content-between">
+                        <h2>Best Sllers</h2>
+                        <!-- <button class="btn-sortBy btn-primary" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#multiCollapseExample4" aria-expanded="false"
+                            aria-controls="multiCollapseExample4">Sort by<i
+                                class="fa-solid fa-chevron-down"></i></button> -->
+
+                        <select onchange="myFunction(this)" id="mySelect">
+                            <option value="">Sort by</option>
+                            <option value="lowest">Rank by lowest price</option>
+                            <option value="highest">Rank by highest price</option>
+                        </select>
+
+                    </div>
+
+                    <!-- danh sách sản phẩm -->
+                    <div class="list-product">
+                        <div class="grid-container">
+                            <!-- <div class="grid-item">1
+                                <img src="../assest/image/the-or1.webp" alt="">
+                                <p>Natural Moisturizing Factors + HA</p>
+                                <p>6</p>
+                                <i onclick="addToCart()" class="fa-solid fa-cart-arrow-down"></i>
+                                <hr>
+
+                                <ul>
+                                    <li>
+                                        <span>Target:</span>
+                                        <span>Dryness</span>
+                                    </li>
+                                    <li>
+                                        <span>Suited to:</span>
+                                        <span>All Skin Types</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid-item">2
+                                <img src="../assest/image/the-or2.webp" alt="">
+                                <p>Hyaluronic Acid 2% + B5</p>
+                                <p>9</p>
+                                <i class="fa-solid fa-cart-arrow-down"></i>
+                                <hr>
+
+                                <ul>
+                                    <li>
+                                        <span>Target:</span>
+                                        <span>Dryness</span>
+                                    </li>
+                                    <li>
+                                        <span>Suited to:</span>
+                                        <span>All Skin Types</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid-item">3
+                                <img src="../assest/image/the or-3.webp" alt="">
+                                <p>Glycolic Acid 7% Toning Solution</p>
+                                <p>13</p>
+                                <i class="fa-solid fa-cart-arrow-down"></i>
+                                <hr>
+
+                                <ul>
+                                    <li>
+                                        <span>Target:</span>
+                                        <span>Signs Of Aging</span>
+                                    </li>
+                                    <li>
+                                        <span>Suited to:</span>
+                                        <span>All Skin Types</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid-item">4
+                                <img src="../assest/image/the-or4.webp" alt="">
+                                <p>Squalane Cleanser</p>
+                                <p>9</p>
+                                <i class="fa-solid fa-cart-arrow-down"></i>
+                                <hr>
+
+                                <ul>
+                                    <li>
+                                        <span>Target:</span>
+                                        <span>Dryness</span>
+                                    </li>
+                                    <li>
+                                        <span>Suited to:</span>
+                                        <span>All Skin Types</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid-item">5
+                                <img src="../assest/image/the-or5.webp" alt="">
+                                <p>Niacinamide 10% + Zinc 1%</p>
+                                <p>6</p>
+                                <i class="fa-solid fa-cart-arrow-down"></i>
+                                <hr>
+
+                                <ul>
+                                    <li>
+                                        <span>Target:</span>
+                                        <span>Dryness</span>
+                                    </li>
+                                    <li>
+                                        <span>Suited to:</span>
+                                        <span>All Skin Types</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid-item">6
+                                <img src="../assest/image/the-or6.webp" alt="">
+                                <p>Hyaluronic Acid 2% + B5</p>
+                                <p>17</p>
+                                <i class="fa-solid fa-cart-arrow-down"></i>
+                                <hr>
+
+                                <ul>
+                                    <li>
+                                        <span>Target:</span>
+                                        <span>Dryness</span>
+                                    </li>
+                                    <li>
+                                        <span>Suited to:</span>
+                                        <span>All Skin Types</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid-item">7
+                                <img src="../assest/image/the-or7.webp" alt="">
+                                <p>Azelaic Acid Suspension 10%</p>
+                                <p>11</p>
+                                <i class="fa-solid fa-cart-arrow-down"></i>
+                                <hr>
+
+                                <ul>
+                                    <li>
+                                        <span>Target:</span>
+                                        <span>Dryness</span>
+                                    </li>
+                                    <li>
+                                        <span>Suited to:</span>
+                                        <span>All Skin Types</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid-item">8
+                                <img src="../assest/image/the-or8.webp" alt="">
+                                <p>Multi-Peptide Eye Serum</p>
+                                <p>25</p>
+                                <i class="fa-solid fa-cart-arrow-down"></i>
+                                <hr>
+
+                                <ul>
+                                    <li>
+                                        <span>Target:</span>
+                                        <span>Dryness</span>
+                                    </li>
+                                    <li>
+                                        <span>Suited to:</span>
+                                        <span>All Skin Types</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="grid-item">9
+                                <img src="../assest/image/the-od9.webp" alt="">
+                                <p>Multi-Peptide + Copper Peptides 1% Serum</p>
+                                <p>30</p>
+                                <i class="fa-solid fa-cart-arrow-down"></i>
+                                <hr>
+
+                                <ul>
+                                    <li>
+                                        <span>Target:</span>
+                                        <span>Dryness</span>
+                                    </li>
+                                    <li>
+                                        <span>Suited to:</span>
+                                        <span>All Skin Types</span>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <!-- phân trang  -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+    </main>
+    <!-- Footer Area -->
+    <footer>
+        <hr>
+        <footer class="footer">
+            <div class="container">
+
+                <div class="">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Join Us</a></li>
+                        <li><a href="#">Transparency in Supply Chains</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h5>Our Commitments</h5>
+                    <ul>
+                        <li><a href="#">Accessibility</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Change is the Journey</a></li>
+                        <li><a href="#">Everything Is Chemicals</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h5>Customer</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Disposal</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Promotion Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h5>Gift Cards</h5>
+                    <ul>
+                        <li><a href="#">Purchase</a></li>
+                        <li><a href="#">Check Balance</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h5>Contact Us</h5>
+                    <ul>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Sign In</a></li>
+                        <li><a href="#">Store Locator</a></li>
+                    </ul>
+
+                </div>
+                <div class="">
+                    <div class="social-icons">
+                        <h5>Follow Us</h5>
+                        <ul>
+                            <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="location">
+                        <h5>Location</h5>
+                        <p><i class="fa-solid fa-location-dot"></i> UNITED STATES</p>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+
+
+    </footer>
+    <script src="../js/ListProduct.js"></script>
+    <!-- Link js bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    <!-- Link logout.js -->
+    <script src="../js/logout.js"></script>
+    <!-- Link Isloggin -->
+    <script src="../js/islogin.js"></script>
+</body>
+</body>
+
+</html>

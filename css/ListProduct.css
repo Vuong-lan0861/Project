@@ -1,0 +1,216 @@
+
+
+/* ======== Main Area ======== */
+/* CSS để tạo kiểu cho breadcrumb */
+.main__top {
+    border-bottom: solid 1px #E0DED8;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.breadcrumb li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.breadcrumb li:last-child {
+    font-weight: bold;
+
+}
+
+.breadcrumb li::after {
+    content: " > ";
+}
+
+.breadcrumb a {
+    color: #0000009b;
+    text-decoration: none;
+}
+
+/* Css phần flter by */
+
+.main-left {
+    border-right: solid 1px #E0DED8;
+
+}
+
+.title-filter {
+    /* height: 120px; */
+    display: flex;
+    align-items: flex-end;
+
+    /* position: fixed; */
+    margin-top: 88px;
+
+
+}
+
+.sidebar-left {
+    margin-top: 50px;
+}
+
+.h2 {
+    background-color: rgba(246, 239, 239, 0.987);
+
+
+}
+
+.check-list-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.check-list label {
+    color: #000;
+    /* Màu chữ đen */
+    font-size: 12px;
+    /* Font size 10px */
+    padding: 5px 0px;
+}
+
+/* Css phần Best Sellers */
+.main-right-top h2 {
+    margin: -6px;
+    margin-left: -1px;
+}
+
+.main-right {
+    /* background-color: antiquewhite; */
+}
+
+.main-right-top {
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 50px;
+    gap: 50px;
+}
+
+.grid-item {
+    /* background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center; */
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.grid-item img {
+    width: 100%;
+    margin: 15px 0;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+.page-link {
+    color: #000;
+}
+
+.grid-item-text {
+    display: inline-flex;
+    justify-content: bottom;
+    align-items: center;
+    padding: 0%;
+}
+
+
+/* ======== Footer Area ======== */
+
+/* Định dạng chung cho phần footer */
+.footer {
+    background-color: #fff;
+    /* Màu nền trắng */
+    color: #000;
+    /* Màu chữ đen */
+    font-size: 10px;
+    /* Font size 10px */
+    padding: 50px 0;
+}
+
+/* Định dạng cho các phần trong footer */
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Căn theo chiều dọc lên trên */
+}
+
+.footer h5 {
+    font-size: 18px;
+    /* Đổi font size cho các tiêu đề h5 thành 18px */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #000;
+    /* Màu chữ đen */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff6f61;
+}
+
+/* Định dạng cho biểu tượng mạng xã hội */
+.footer .social-icons ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+}
+
+.footer .social-icons li {
+    margin-right: 13px;
+}
+
+.footer .social-icons i {
+    font-size: 24px;
+}
+
+/* Định dạng cho phần vị trí */
+.footer .location p {
+    margin: 0;
+}
+
+/* Định dạng cho các cột trong footer */
+.footer .col {
+    flex: 1;
+    margin: 0 10px;
+    /* Tạo khoảng cách giữa các cột */
+}
+
+/* Định dạng cho responsive */
+@media (max-width: 768px) {
+    .footer .col {
+        flex-basis: calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}

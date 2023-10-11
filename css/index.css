@@ -1,0 +1,185 @@
+
+
+/* ======== Start Main ======== */
+.main {}
+
+.main .main__topbar {
+    background-image: url(../assest/image/D070122-SlotA.webp);
+    background-repeat: no-repeat;
+}
+
+
+
+.main .main__topbar img {
+width: 250px;
+height: 250px;
+object-fit: cover;
+}
+
+.main .main__topbar .main__text-product-introduction {
+    width: 455px;
+    height: 280px;
+    background-color: rgba(245, 240, 240, 0.813);
+    margin-left: 40px;
+    padding: 40px;
+
+}
+
+.main .main__topbar .main__text-product-introductio .main__btn-product-introduction {
+    border-radius: 30px;
+
+}
+
+.main .main__bottombar .component-layout-top {
+    margin-top: 70px;
+    margin-bottom: 100px;
+    margin-left: 70%;
+}
+
+
+.main .main__bottombar .content-1 {}
+
+.main .main__bottombar .content-1 .content-1-text {
+    margin-right: 5%;
+    margin-left: 50%;
+    height: 200px;
+}
+
+.main .main__bottombar .content-1 .content-1-text .big-text {
+    font-size: 85px;
+    margin-bottom: 55px;
+}
+
+.main .main__bottombar .content-1 .content-1-text .small-text {}
+
+.main .main__bottombar .component-layout-bottom {
+    margin-top: 40px;
+    margin-bottom: 200px;
+    margin-left: 60%;
+}
+
+/* ----------------- */
+
+.content-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 65px;
+    margin-bottom: 210px;
+
+
+
+}
+
+.content-2-1__image {
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.text-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 100%;
+    margin: 15px 0;
+    height: 370px;
+    object-fit: cover;
+}
+
+.content-2-1__image
+p{
+    height: 120px;
+}
+
+
+
+/* ======== End Main ======== */
+
+/* ======== Footer ======== */
+
+/* Định dạng chung cho phần footer */
+.footer {
+    background-color: #fff;
+    /* Màu nền trắng */
+    color: #000;
+    /* Màu chữ đen */
+    font-size: 10px;
+    /* Font size 10px */
+    padding: 50px 0;
+}
+
+/* Định dạng cho các phần trong footer */
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Căn theo chiều dọc lên trên */
+}
+
+.footer h5 {
+    font-size: 18px;
+    /* Đổi font size cho các tiêu đề h5 thành 18px */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #000;
+    /* Màu chữ đen */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff6f61;
+}
+
+/* Định dạng cho biểu tượng mạng xã hội */
+.footer .social-icons ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+}
+
+.footer .social-icons li {
+    margin-right: 13px;
+}
+
+.footer .social-icons i {
+    font-size: 24px;
+}
+
+/* Định dạng cho phần vị trí */
+.footer .location p {
+    margin: 0;
+}
+
+/* Định dạng cho các cột trong footer */
+.footer .col {
+    flex: 1;
+    margin: 0 10px;
+    /* Tạo khoảng cách giữa các cột */
+}
+
+/* Định dạng cho responsive */
+@media (max-width: 768px) {
+    .footer .col {
+        flex-basis: calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}

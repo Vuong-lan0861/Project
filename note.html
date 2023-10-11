@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-left col-2">
+        <div class="title-filter">
+            <h2>Filter by</h2>
+        </div>
+        <div class="sidebar-left">
+            <div class="check-list-title">
+                <h6>Concern</h6>
+                <i class="fas fa-minus" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample1"
+                    aria-expanded="false"></i>
+            </div>
+            <form class="check-list collapse multi-collapse" id="multiCollapseExample1">
+                <!-- ...Thêm checkbox items 1-13 ở đây... -->
+                <label for="item1"><input type="checkbox" id="item1" name="items" value="Item 1"> Dullness</label><br>
+                <label for="item2"><input type="checkbox" id="item2" name="items" value="Item 2"> Texttural Irregularities</label><br>
+                <label for="item3"><input type="checkbox" id="item3" name="items" value="Item 3"> Signs Of Aging</label><br>
+                <label for="item4"><input type="checkbox" id="item4" name="items" value="Item 4"> Dryness</label><br>
+                <label for="item5"><input type="checkbox" id="item5" name="items" value="Item 5"> Uneven Skin Tone</label><br>
+                <label for="item7"><input type="checkbox" id="item5" name="items" value="Item 7"> Puffiness</label><br>
+                <label for="item8"><input type="checkbox" id="item5" name="items" value="Item 8"> Dark Circles</label><br>
+                <label for="item9"><input type="checkbox" id="item5" name="items" value="Item 9"> Visible Shine</label><br>
+                <label for="item10"><input type="checkbox" id="item5" name="items" value="Item 10"> Crow's Feet</label><br>
+                <label for="item11"><input type="checkbox" id="item5" name="items" value="Item 11"> Cleansing</label><br>
+                <label for="item12"><input type="checkbox" id="item5" name="items" value="Item 12"> Look Of Redness</label><br>
+                <label for="item13"><input type="checkbox" id="item5" name="items" value="Item 13"> Signs Of Congestion</label><br>
+
+            </form>
+            <hr>
+            <div class="check-list-title">
+                <h6>Active Ingredient</h6>
+                <i class="fas fa-minus" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+                    aria-expanded="false"></i>
+            </div>
+            <form class="check-list collapse" id="collapseExample">
+                <!-- ...Thêm checkbox items 14-18 ở đây... -->
+                <label for="item14"><input type="checkbox" id="item14" name="items" value="Item 14">
+                    Peptides</label><br>
+                <label for="item15"><input type="checkbox" id="item15" name="items" value="Item 15">
+                    Hydrators</label><br>
+                <label for="item16"><input type="checkbox" id="item16" name="items" value="Item 16">
+                    Niaciamide</label><br>
+                <label for="item17"><input type="checkbox" id="item17" name="items" value="Item 17">
+                    Hyaluronic Acid</label><br>
+                <label for="item18"><input type="checkbox" id="item18" name="items" value="Item 18">
+                    Squalane</label><br>
+
+            </form>
+            <hr>
+            <div class="check-list-title">
+                <h6>Product Type</h6>
+                <i class="fas fa-minus btn-primary" data-bs-toggle="collapse"
+                    data-bs-target="#multiCollapseExample2" aria-expanded="false"
+                    aria-controls="multiCollapseExample2"></i>
+            </div>
+
+            <form class="check-list collapse multi-collapse" id="multiCollapseExample2">
+                <!-- ...Thêm checkbox items 19-23 ở đây... -->
+                <label for="item19"><input type="checkbox" id="item19" name="items" value="Item 19">serums</label><br>
+                <label for="item20"><input type="checkbox" id="item20" name="items" value="Item 20">tones</label><br>
+                <label for="item21"><input type="checkbox" id="item21" name="items" value="Item 21">Facial Cleansers</label><br>
+                
+            </form>
+
+            <hr>
+            <div class="check-list-title">
+                <h6>Time of Use</h6>
+                <i class="fas fa-minus btn-primary" data-bs-toggle="collapse"
+                    data-bs-target="#multiCollapseExample3" aria-expanded="false"
+                    aria-controls="multiCollapseExample3"></i>
+            </div>
+
+            <form class="check-list collapse multi-collapse" id="multiCollapseExample3">
+                <!-- ...Thêm checkbox items 19-23 ở đây... -->
+                <label for="item19"><input type="checkbox" id="item19" name="items" value="Item 19">
+                    AM</label><br>
+                <label for="item20"><input type="checkbox" id="item20" name="items" value="Item 20">
+                    PM</label><br>
+            
+            </form>
+            <!-- Tiếp tục thêm các form khác ở đây... -->
+        </div>
+    </div>
+<script>
+    let productList = [
+    {
+        name: "Natural Moisturizing Factors + HA",
+        price: 6,
+        id: 1,
+        src: "../assest/image/the-or1.webp",
+        stock: 15,
+        target: "Dryness",
+        suited: "All Skin Types",
+        concern: ["Dullness", "Texttural Irregularities"],
+        ingredient: ["Peptides", "Niaciamide"],
+        productType: "serums",
+        timeOfUse: ["PM"]
+    },
+    {
+        name: "Hyaluronic Acid 2% + B5",
+        price: 9,
+        id: 2,
+        src: "../assest/image/the-or2.webp",
+        stock: 20,
+        target: "Dryness",
+        suited: "All Skin Types",
+        concern: ["Signs Of Aging", "Crow's Feet", "Cleansing"],
+        ingredient: ["Hydrators", "Hyaluronic Acid"],
+        productType: "tones",
+        timeOfUse: ["PM"]
+    },
+    {
+        name: "Glycolic Acid 7% Toning Solution",
+        price: 7,
+        id: 3,
+        src: "../assest/image/the or-3.webp",
+        stock: 13,
+        target: "Signs Of Aging",
+        suited: "All Skin Types",
+        concern: ["look Of Redness", "Uneven Skin Tone"],
+        ingredient: ["Squalane"],
+        productType: "Moisturizers",
+    },
+    {
+        name: "Squalane Cleanser",
+        price: 9,
+        id: 4,
+        src: "../assest/image/the-or4.webp",
+        stock: 7,
+        target: "Cleansing",
+        suited: "All Skin Types",
+        concern: ["look Of Redness", "Uneven Skin Tone"],
+        ingredient: ["Peptides", "Hydrators", "Niaciamide"],
+        productType: "Facial Cleansers",
+        timeOfUse: ["AM", "PM"]
+    },
+    {
+        name: "Niacinamide 10% + Zinc 1%",
+        price: 6,
+        id: 5,
+        src: "../assest/image/the-or5.webp",
+        stock: 3,
+        target: "Textural Irregularities",
+        suited: "All Skin Types",
+        concern: ["Visible Shine", "look Of Redness"],
+        ingredient: ["Hyaluronic Acid", "Hydrators"],
+        productType: "tones",
+        timeOfUse: ["AM", "PM"]
+    },
+    {
+        name: "Niacinamide 10% + Zinc 1%",
+        price: 17,
+        id: 6,
+        src: "../assest/image/the-or6.webp",
+        stock: 3,
+        target: "Textural Irregularities",
+        suited: "All Skin Types",
+        concern: ["Dryness", "Puffiness"],
+        ingredient: ["Peptides", "Hydrators", "Niaciamide"],
+        productType: "serums",
+        timeOfUse: ["AM", "PM"]
+    },
+    {
+        name: "Azelaic Acid Suspension 10%",
+        price: 11,
+        id: 7,
+        src: "../assest/image/the-or7.webp",
+        stock: 13,
+        target: "Signs Of Aging",
+        suited: "All Skin Types",
+        concern: ["look Of Redness", "Crow's Feet"],
+        ingredient: ["Niaciamide", "Hyaluronic Acid", "Squalane"],
+        productType: "tones",
+        timeOfUse: ["AM", "PM"]
+    },
+    {
+        name: "Multi-Peptide Eye Serum",
+        price: 25,
+        id: 8,
+        src: "../assest/image/the-or8.webp",
+        stock: 7,
+        target: "Signs Of Aging",
+        suited: "All Skin Types",
+        concern: ["Uneven Skin Tone", "Visible Shine"],
+        ingredient: ["Peptides", "Hydrators", "Niaciamide", "Hyaluronic Acid"],
+        productType: "serums",
+        timeOfUse: ["AM"]
+    },
+    {
+        name: "Multi-Peptide + Copper Peptides 1% Serum",
+        price: 30,
+        id: 9,
+        src: "../assest/image/the-od9.webp",
+        stock: 9,
+        target: "Signs Of Aging",
+        suited: "All Skin Types",
+        concern: ["Crow's Feet", "Signs Of Congestion"],
+        ingredient: ["Squalane", "Hyaluronic Acid"],
+        productType: "serums",
+        timeOfUse: ["AM", "PM"]
+    },
+    {
+        name: "Core Regimen",
+        price: 30,
+        id: 10,
+        src: "../assest/image/NIOD1.jpeg",
+        stock: 9,
+        target: "Signs Of Aging",
+        suited: "All Skin Types",
+        concern: ["Crow's Feet", "Signs Of Congestion"],
+        ingredient: ["Squalane", "Hyaluronic Acid"],
+        productType: "serums",
+        timeOfUse: ["AM", "PM"]
+    },
+    {
+        name: "Support Regimen",
+        price: 25,
+        id: 11,
+        src: "../assest/image/NIOD02.jpeg",
+        stock: 7,
+        target: "Signs Of Aging",
+        suited: "All Skin Types",
+        concern: ["Uneven Skin Tone", "Visible Shine"],
+        ingredient: ["Peptides", "Hydrators", "Niaciamide", "Hyaluronic Acid"],
+        productType: "serums",
+        timeOfUse: ["AM", "PM"]
+    },
+    {
+        name: "Survival",
+        price: 17,
+        id: 12,
+        src: "../assest/image/NIOD03.jpeg",
+        stock: 3,
+        target: "Textural Irregularities",
+        suited: "All Skin Types",
+        concern: ["Dryness", "Puffiness"],
+        ingredient: ["Peptides", "Hydrators", "Niaciamide"],
+        productType: "serums",
+        timeOfUse: ["AM", "PM"]
+    },
+    {
+        name: "Yesti",
+        price: 15,
+        id: 13,
+        src: "../assest/image/NIOD04.jpeg",
+        stock: 15,
+        target: "Dryness",
+        suited: "All Skin Types",
+        concern: ["Dullness", "Texttural Irregularities"],
+        ingredient: ["Peptides", "Niaciamide"],
+        productType: "serums",
+        timeOfUse: ["AM"]
+    },
+    {
+        name: "Shizen Sets",
+        price: 40,
+        id: 14,
+        src: "../assest/image/NIOD05.jpeg",
+        stock: 3,
+        target: "Textural Irregularities",
+        suited: "All Skin Types",
+        concern: ["Dryness", "Puffiness"],
+        ingredient: ["Peptides", "Hydrators", "Niaciamide"],
+        productType: "serums",
+        timeOfUse: ["AM", "PM"]
+    },
+    {
+        name: "Eye",
+        price: 25,
+        id: 15,
+        src: "../assest/image/NIOD06.jpeg",
+        stock: 7,
+        target: "Signs Of Aging",
+        suited: "All Skin Types",
+        concern: ["Uneven Skin Tone", "Visible Shine"],
+        ingredient: ["Peptides", "Hydrators", "Niaciamide", "Hyaluronic Acid"],
+        productType: "serums",
+        timeOfUse: ["AM", "PM"]
+    },
+];
+
+</script>
+    
+</body>
+</html>

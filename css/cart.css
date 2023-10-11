@@ -1,0 +1,210 @@
+
+
+/* ======== Main Area ======== */
+/* CSS để tạo kiểu cho breadcrumb */
+.main__top {
+    border-bottom: solid 1px #E0DED8;
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+.breadcrumb li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.breadcrumb li:last-child {
+    font-weight: bold;
+
+}
+
+.breadcrumb li::after {
+    content: " > ";
+}
+
+.breadcrumb a {
+    color: #0000009b;
+    text-decoration: none;
+}
+
+/* ------------------------Main left----------------------------- */
+.main-left {
+    border-right: solid 1px #E0DED8;
+
+}
+
+
+.main-title {
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 50px;
+}
+
+.main-left-cart{
+    overflow-y: auto;
+    height: 600px;
+
+}
+
+
+.product-image {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    border-bottom: solid 1px #AAAAAA;
+    margin: 50px;
+    padding-bottom: 50px;
+}
+
+.product-image img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+
+}
+
+ul li {
+    list-style-type: none;
+    font-size: 12px;
+}
+
+.product-quantity {
+    font-size: 12px;
+}
+
+.quantity-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: solid 1px #AAAAAA;
+    padding: 7px;
+    margin-bottom: 10px;
+
+}
+
+.quantity {
+    margin: 0px 10px;
+}
+
+
+
+
+
+
+/* ------------------------Main riht----------------------------- */
+.main-right {
+    background-color: #F6F6F6;
+
+}
+.main-right-total {
+    margin: 50px;
+    font-size: 12px;
+    border-bottom: solid 1px #AAAAAA;
+    border-top: solid 1px #AAAAAA;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.checkout{
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 536px;
+    height: 43px;
+    background-color:black;
+    color: white;
+
+    
+}
+
+/* =============================== Footer Area ======== */
+
+/* Định dạng chung cho phần footer */
+.footer {
+    background-color: #fff;
+    /* Màu nền trắng */
+    color: #000;
+    /* Màu chữ đen */
+    font-size: 10px;
+    /* Font size 10px */
+    padding: 50px 0;
+}
+
+/* Định dạng cho các phần trong footer */
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Căn theo chiều dọc lên trên */
+}
+
+.footer h5 {
+    font-size: 18px;
+    /* Đổi font size cho các tiêu đề h5 thành 18px */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #000;
+    /* Màu chữ đen */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff6f61;
+}
+
+/* Định dạng cho biểu tượng mạng xã hội */
+.footer .social-icons ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+}
+
+.footer .social-icons li {
+    margin-right: 13px;
+}
+
+.footer .social-icons i {
+    font-size: 24px;
+}
+
+/* Định dạng cho phần vị trí */
+.footer .location p {
+    margin: 0;
+}
+
+/* Định dạng cho các cột trong footer */
+.footer .col {
+    flex: 1;
+    margin: 0 10px;
+    /* Tạo khoảng cách giữa các cột */
+}
+
+/* Định dạng cho responsive */
+@media (max-width: 768px) {
+    .footer .col {
+        flex-basis: calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,108 @@
+/* ======== Header ======== */
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header .header__topbar {
+    width: 100%;
+    background-color: rgba(12, 13, 13, 0.883);
+    color: rgba(249, 247, 247, 0.905);
+}
+
+.header .header__topbar .header__logo img {
+    width: 70px;
+    height: 50px;
+}
+
+.header .header__topbar .header__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .header__topbar .header__list-icon,
+.header__logo {
+    width: 150px;
+}
+
+.header .header__topbar .header__list-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.header .header__topbar .header__list-icon i {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.header__bottombar {
+    background-color: rgba(240, 244, 247, 0.978);
+
+}
+
+.nav-link-custom {
+    color: #333;
+    font-weight: 600;
+}
+
+/* ======== Main Area ======== */
+
+.form-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 20px;
+    display: inline;
+    align-items: center;
+    /* height: 600px; */
+    width: 400px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+h2 {
+    text-align: center;
+}
+.success, .error, .lack{
+    display: none;
+}
+
+input[type=email],input[type=password],input[type=text], input[type=tel]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #11121242;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #0a0a0a;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}

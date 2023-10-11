@@ -1,0 +1,136 @@
+/* ======== Header ======== */
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header .header__topbar {
+    width: 100%;
+    background-color: rgba(12, 13, 13, 0.883);
+    color: rgba(249, 247, 247, 0.905);
+}
+
+.header .header__topbar .header__logo img {
+    width: 70px;
+    height: 50px;
+}
+
+.header .header__topbar .header__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .header__topbar .header__list-icon,
+.header__logo {
+    width: 150px;
+}
+
+.header .header__topbar .header__list-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+
+.header .header__topbar .header__list-icon i {
+    cursor: pointer;
+    
+}
+
+.header .header__topbar .header__list-icon .cart{
+    display: none;
+    
+}
+
+
+.header .header__topbar .header__list-icon .header_user {
+    position: relative;
+}
+
+.header .header__topbar .header__list-icon .header_user .login-register,
+.logout {
+    position: absolute;
+    z-index: 100;
+    background-color: #0b0b0b;
+    right: -16px;
+    /* border: solid 1px rgba(0, 0, 0, 0.929); */
+    top: 38px;
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* display: none; */
+    animation: fadeUp .2s ease-in;
+    /* min-width: 200px; */
+
+}
+
+.header .header__topbar .header__list-icon .header_user .login-register.active,
+.logout.active {
+    display: block;
+
+}
+
+.header .header__topbar .header__list-icon .header_user .login-register a,
+.logout a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+@keyframes fadeUp {
+    0% {
+        top: 30px;
+    }
+
+    100% {
+        top: 38px;
+    }
+}
+
+.header .header__topbar .header__list-icon .header_user:hover .header_user_hover {
+    display: block;
+}
+
+.header .header__topbar .header__list-icon .header_user .header_user_hover {
+    display: none;
+}
+
+.header .header__topbar .header__list-icon .header_user .header_user_hover::before {
+    content: "";
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid #070707;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    position: absolute;
+    top: 15px;
+    left: -6px;
+}
+
+
+
+.header .header__topbar .header__list-icon .header_user .login-register a:hover {
+    color: rgb(0, 255, 13);
+}
+
+.header__bottombar {
+    background-color: rgba(240, 244, 247, 0.978);
+
+}
+
+.nav-link-custom {
+    color: #333;
+    font-weight: 600;
+}
+
+.nav .addmin{
+    display: none;
+}
