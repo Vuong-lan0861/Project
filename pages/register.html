@@ -11,12 +11,15 @@
     <link rel="stylesheet" href="../css/register.css">
     <!-- Link icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- link css islogin -->
+    <link rel="stylesheet" href="../css/islogin.css">
 </head>
 
 <body>
     <!-- Header Area -->
     <header class="header">
         <!-- <div class="container-fluid"> -->
+        <!-- Header Area -->
         <div class="row">
             <div class="col-12">
                 <div class="header__topbar d-flex justify-content-between">
@@ -28,37 +31,49 @@
                         <span id="headerText">Enjoy a free gift with your purchase</span>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
+
                     <div class="header__list-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <!-- <i class="fa-regular fa-face-smile"></i> -->
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <i class="fa-solid fa-user"></i>
+
+                        <div id="cart" class="cart">
+                            <a style="color: white;" href="./cart.html">
+                                <i class="fa-solid fa-cart-shopping">
+                                </i>
+                                <sup class="count js-count">10</sup>
+                            </a>
+                        </div>
+                        <div class="header_user">
+                            <i id="registerUser" class="fa-solid fa-user"></i>
+                            <div class="header_user_hover">
+                                <div id="loginRegister" class="login-register">
+                                    <a href="./login.html">Login</a>
+                                    <!-- <a href="./register.html">Register</a> -->
+                                </div>
+                                <div id="logout" class="logout">
+                                    <a onclick="logOut()" href="../pages/login.html">Log out</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--  -->
+
         <div class="row">
             <div class="col-12">
                 <div class="header__bottombar ">
                     <ul class="nav justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link-custom nav-link active" aria-current="page" href="#">New</a>
+                            <a class="nav-link-custom nav-link active" aria-current="page" href="../index.html">New</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link-custom nav-link" href="#">Best Sellers</a>
+                            <a class="nav-link-custom nav-link" href="../pages/ListProduct.html">Collections</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link-custom nav-link" href="#">Collections</a>
+                            <a class="nav-link-custom nav-link" href="../pages/Gifts.html">Gift</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link-custom nav-link" href="#">Skincare</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link-custom nav-link" href="#">Makeup</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link-custom nav-link" href="#">Gift</a>
+                        <li id="addmin" class="addmin nav-item">
+                            <a class="nav-link-custom nav-link" href="../pages/addminpage.html">Addmin</a>
                         </li>
                     </ul>
                 </div>
@@ -102,12 +117,16 @@
             </div>
         </div>
     </main>
-    <!-- Link index.js -->
-    <script src="../js/register.js"></script>
+
+     <script src="../js/register.js"></script>
     <!-- Link js bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-     <!-- LInk showCart.js -->
-     <script src="../js/showCart.js"></script>
+    <!-- Link logout.js -->
+    <script src="../js/logout.js"></script>
+    <!-- Link Isloggin -->
+    <script src="../js/islogin.js"></script>
+    <!-- LInk showCart.js -->
+    <script src="../js/showCart.js"></script>
 </body>
 
 </html>

@@ -39,7 +39,7 @@ function IsLogged() {
     let users = JSON.parse(localStorage.getItem("users"));
 
     if (checkLogin != null) {
-        
+
         for (let i = 0; i < users.length; i++) {
             if (users[i].id == checkLogin) {
 
@@ -50,13 +50,13 @@ function IsLogged() {
                 if (users[i].email == "vuonglan0861@gmail.com" && users[i].password == "12345") {
                     document.getElementById("addmin").style.display = "block";
                     document.getElementById("cart").style.display = "none";
-                    
+
                 }
                 else {
                     document.getElementById("addmin").style.display = "none";
                     document.getElementById("cart").style.display = "block";
                 }
-                
+
             }
         }
     } else {
@@ -65,7 +65,25 @@ function IsLogged() {
     }
 }
 
+// ===========Seach================
+
+let modalSearch = document.querySelector(".modal-search");
+let closeBtn = document.querySelector(".close-btn");
+
+
+function openSearch() {
+    modalSearch.classList.add("active");
+}
+
+function closeSearch() {
+    modalSearch.classList.remove("active");
+}
+
+
+
 window.onload = IsLogged;
+
+
 
 
 

@@ -5,8 +5,7 @@
 .main__top {
     border-bottom: solid 1px #E0DED8;
     height: 70px;
-    display: flex;
-    align-items: center;
+   
 }
 
 .breadcrumb {

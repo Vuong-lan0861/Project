@@ -13,6 +13,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- link css islogin -->
     <link rel="stylesheet" href="../css/islogin.css">
+    <style>
+        .modal-search {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            background-color: aqua;
+            padding: 80px 160px;
+            transition: 0.3s linear;
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            
+
+        }
+
+        .modal-search.active {
+            transition: 0.3s linear;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+        }
+
+        /* @keyframes fadeLeft{
+            0%{
+               
+                transform: translateX(100%);
+            }
+            100%{
+               
+                transform: translateX(0%);
+            }
+        } */
+    </style>
 
 </head>
 
@@ -34,7 +65,8 @@
                     </div>
 
                     <div class="header__list-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <i onclick="openSearch()" class="fa-solid fa-magnifying-glass"></i>
 
                         <div id="cart" class="cart">
                             <a style="color: white;" href="./cart.html">
@@ -48,7 +80,7 @@
                             <div class="header_user_hover">
                                 <div id="loginRegister" class="login-register">
                                     <a href="./login.html">Login</a>
-                                    <a href="./register.html">Register</a>
+                                    <!-- <a href="./register.html">Register</a> -->
                                 </div>
                                 <div id="logout" class="logout">
                                     <a onclick="logOut()" href="../pages/login.html">Log out</a>
@@ -71,17 +103,22 @@
                             <a class="nav-link-custom nav-link" href="../pages/ListProduct.html">Collections</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link-custom nav-link" href="#">Gift</a>
+                            <a class="nav-link-custom nav-link" href="../pages/Gifts.html">Gift</a>
                         </li>
                         <li id="addmin" class="addmin nav-item">
                             <a class="nav-link-custom nav-link" href="../pages/addminpage.html">Addmin</a>
                         </li>
                     </ul>
+
                 </div>
+
             </div>
         </div>
         </div>
     </header>
+    <div class="modal-search">
+        <div onclick="closeSearch()" class="close-btn">x</div>
+    </div>
 
     <!-- Main Area -->
     <main>

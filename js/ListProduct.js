@@ -328,7 +328,7 @@ function renderProducts(productList) {
             </div>
    `
     }
-    document.getElementsByClassName("grid-container")[0].innerHTML = text
+    document.getElementsByClassName("grid-container")[0].innerHTML = text;
 }
 renderProducts(products);
 

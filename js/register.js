@@ -1,21 +1,4 @@
-// ========================Header area==================================
-let randomText;
-let texts = [
-    "Enjoy a free gift with your purchase",
-    "Terms & Conditions apply.",
-    "Carbon neutral shipping on all orders",
-    "Free shipping on orders over 25USD",
-]
 
-// Function để hiển thị ngẫu nhiên các phần tử trong mảng texts
-function renderText() {
-    const randomIndex = Math.floor(Math.random() * texts.length); // Lấy một chỉ số ngẫu nhiên
-    randomText = texts[randomIndex]; // Lấy văn bản tương ứng với chỉ số ngẫu nhiên
-    document.getElementById("headerText").textContent = randomText; // Hiển thị văn bản ngẫu nhiên
-}
-
-// Gọi hàm renderText mỗi giây
-setInterval(renderText, 3000);
 
 
 // ========================Main area==================================
@@ -46,11 +29,6 @@ function register(event) {
         cart: [],
     }
 
-
-    // let check = users.filter((item) => {
-    //     return item.email == email;
-    // }
-    // )
     let check = false;
     for (let i = 0; i < users.length; i++) {
         if (users[i].email == email) {
@@ -67,6 +45,7 @@ function register(event) {
     }
     else {
         if (check == false) {
+            
             // Nếu check == 0 thì tài khoản chưa được đăng kí
             users.push(obj);
             localStorage.setItem("users", JSON.stringify(users));

@@ -1,0 +1,90 @@
+img{
+    width: 300px 300px;
+    margin: 40px;
+    border: solid 1px;
+    
+}
+
+/* ======== Footer Area ======== */
+
+/* Định dạng chung cho phần footer */
+.footer {
+    background-color: #fff;
+    /* Màu nền trắng */
+    color: #000;
+    /* Màu chữ đen */
+    font-size: 10px;
+    /* Font size 10px */
+    padding: 50px 0;
+}
+
+/* Định dạng cho các phần trong footer */
+.footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Căn theo chiều dọc lên trên */
+}
+
+.footer h5 {
+    font-size: 18px;
+    /* Đổi font size cho các tiêu đề h5 thành 18px */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #000;
+    /* Màu chữ đen */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ff6f61;
+}
+
+/* Định dạng cho biểu tượng mạng xã hội */
+.footer .social-icons ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
+}
+
+.footer .social-icons li {
+    margin-right: 13px;
+}
+
+.footer .social-icons i {
+    font-size: 24px;
+}
+
+/* Định dạng cho phần vị trí */
+.footer .location p {
+    margin: 0;
+}
+
+/* Định dạng cho các cột trong footer */
+.footer .col {
+    flex: 1;
+    margin: 0 10px;
+    /* Tạo khoảng cách giữa các cột */
+}
+
+/* Định dạng cho responsive */
+@media (max-width: 768px) {
+    .footer .col {
+        flex-basis: calc(50% - 20px);
+        margin-bottom: 20px;
+    }
+}
