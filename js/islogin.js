@@ -1,3 +1,10 @@
+const VND = new Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+});
+
+
+
 let randomText;
 let texts = [
     "Enjoy a free gift with your purchase",
@@ -82,7 +89,7 @@ function closeSearch() {
 
 // funtion seach product
 function searchProduct() {
-    // let products = JSON.parse(localStorage.getItem("productList"));
+    let products = JSON.parse(localStorage.getItem("productList"));
     let inputValue = document.getElementById("search").value;
     let result = products.filter((item) => {
         return item.name.indexOf(inputValue) != -1;
@@ -111,10 +118,6 @@ function searchProduct() {
             `
             seachResult.appendChild(div);
         });
-    }
-    else {
-        renderProducts();
-
     }
 }
 

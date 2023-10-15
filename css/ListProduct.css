@@ -118,6 +118,11 @@
     object-fit: cover;
 }
 
+.grid-item i:hover{
+    cursor: pointer;
+    color: #0d6efd;
+}
+
 
 .page-link {
     color: #000;

@@ -1,7 +1,6 @@
 
 
 /* ======== Start Main ======== */
-.main {}
 
 .main .main__topbar {
     background-image: url(../assest/image/D070122-SlotA.webp);
@@ -83,7 +82,7 @@ object-fit: cover;
     width: 100%;
     margin-bottom: 10px;
 }
-
+.content-2-1__image
 img {
     width: 100%;
     margin: 15px 0;

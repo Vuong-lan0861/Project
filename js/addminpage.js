@@ -12,7 +12,7 @@ function renderUsers() {
     <th scope="col">email</th>
     <th scope="col">Full Name</th>
     <th scope="col">Phone Number</th>
-    <th scope="col">isLoked</th>
+    <th scope="col">Delete</th>
     `
 
   let text = "";
@@ -39,14 +39,14 @@ function renderUsers() {
 
 //  Hiển thị danh sách sản phẩm
 
-const VND = new Intl.NumberFormat('vi-VN', {
-  style: 'currency',
-  currency: 'VND',
-});
+// const VND = new Intl.NumberFormat('vi-VN', {
+//   style: 'currency',
+//   currency: 'VND',
+// });
 
 function renderProducts() {
-  let checkUser = localStorage.getItem("productList");
-  let productList = JSON.parse(checkUser);
+  let products = JSON.parse(localStorage.getItem("productList"));
+
 
   document.getElementById("addmin-users-thead").innerHTML = `
         <th scope="col">cd</th>
@@ -61,21 +61,21 @@ function renderProducts() {
 
 
   let text = "";
-  for (let i = 0; i < productList.length; i++) {
+  for (let i = 0; i < products.length; i++) {
 
     text += `
                 
                     <tr>
                         <td scope="col">${i + 1}</td>
-                        <td><img src="${productList[i].src}" alt=""></td>
-                        <td>${productList[i].name}</td>
-                        <td>${productList[i].target}</td>
-                        <td>${productList[i].suited}</td>
-                        <td>${VND.format(productList[i].price)}</td>
-                        <td>${productList[i].stock}</td>
+                        <td><img src="${products[i].src}" alt=""></td>
+                        <td>${products[i].name}</td>
+                        <td>${products[i].target}</td>
+                        <td>${products[i].suited}</td>
+                        <td>${VND.format(products[i].price)}</td>
+                        <td>${products[i].stock}</td>
                         <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-                        <i onclick="updateProduct(${productList[i].id})" class="fa-solid fa-pen-to-square"></i>
+                        <i onclick="updateProduct(${products[i].id})" class="fa-solid fa-pen-to-square"></i>
                         </button>
 <div class="js-modal modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -100,12 +100,12 @@ function renderProducts() {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onclick = "saveUpdateProduct(${productList[i].id})" type="button" class="js-btn-save btn btn-primary">Save</button>
+        <button onclick = "saveUpdateProduct(${products[i].id})" type="button" class="js-btn-save btn btn-primary">Save</button>
       </div>
     </div>
   </div>
 </div>
-                            <i onclick = "deleteProducts(${productList[i].id})" class="fa-solid fa-trash-can"></i>
+                            <i onclick = "deleteProducts(${products[i].id})" class="fa-solid fa-trash-can"></i>
                         </td>
                     </tr>
                 
@@ -134,14 +134,14 @@ function deleteUsers(userId) {
 
 // Thêm chức năng xoá sản phẩm theo id
 function deleteProducts(productId) {
-  let productList = JSON.parse(localStorage.getItem("productList"));
+  let products = JSON.parse(localStorage.getItem("productList"));
   // Tìm vị trí sản phẩm trong danh sách
-  let productIndex = productList.findIndex(product => product.id === productId);
+  let productIndex = products.findIndex(product => product.id === productId);
   if (productIndex !== -1) {
     // Xoá sản phẩm khỏi danh sách
-    productList.splice(productIndex, 1);
+    products.splice(productIndex, 1);
     // Cập nhật lại danh sách trong localStorage
-    localStorage.setItem("productList", JSON.stringify(productList));
+    localStorage.setItem("productList", JSON.stringify(products));
     // Render lại danh sách sản phẩm
     renderProducts();
   }
@@ -151,34 +151,32 @@ function deleteProducts(productId) {
 function updateProduct(productId) {
 
   localStorage.setItem("keyEdit", productId)
-  let productList = JSON.parse(localStorage.getItem("productList"));
+  let products = JSON.parse(localStorage.getItem("productList"));
+
   // Tìm vị trí sản phẩm trong danh sách
-  let productIndex = productList.findIndex(product => product.id === productId);
+  let productIndex = products.findIndex(product => product.id === productId);
   let price = document.getElementsByClassName("price")[0];
-  price.value = productList[productIndex].price;
+  price.value = products[productIndex].price;
   let stock = document.getElementsByClassName("stock")[0];
-  stock.value = productList[productIndex].stock;
+  stock.value = products[productIndex].stock;
  
 }
 
 // FUNCTION SAVE EDIT
 
 function saveUpdateProduct(productId) {
-
+  let products = JSON.parse(localStorage.getItem("productList"));
   let keyEdit = localStorage.getItem("keyEdit");
- 
-
   let price = document.getElementsByClassName("price")[0].value;
   let stock = document.getElementsByClassName("stock")[0].value;
   if (keyEdit != null) {
-    let productList = JSON.parse(localStorage.getItem("productList"));
-    let productIndex = productList.findIndex(product => product.id == keyEdit);
+    
+    let productIndex = products.findIndex(product => product.id == keyEdit);
+    products[productIndex].stock = stock;
+    products[productIndex].price = price;
 
-    productList[productIndex].stock = stock;
-    productList[productIndex].price = price;
 
-
-    localStorage.setItem("productList", JSON.stringify(productList));
+    localStorage.setItem("productList", JSON.stringify(products));
 
 
   }

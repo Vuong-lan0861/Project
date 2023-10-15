@@ -89,10 +89,10 @@
 // function hiển thị danh sách sản phẩm
 
 // Đơn vị tiền tệ
-const VND = new Intl.NumberFormat('vi-VN', {
-    style: 'currency',
-    currency: 'VND',
-});
+// const VND = new Intl.NumberFormat('vi-VN', {
+//     style: 'currency',
+//     currency: 'VND',
+// });
 
 let productList = [
     {
@@ -103,10 +103,10 @@ let productList = [
         stock: 15,
         target: "Dryness",
         suited: "All Skin Types",
-        concern: ["Dullness", "Texttural Irregularities"],
-        ingredient: ["Peptides", "Niaciamide"],
+        concern: "Dullness",
+        ingredient: "Peptides",
         productType: "serums",
-        timeOfUse: ["PM"]
+        timeOfUse: "PM",
     },
     {
         name: "Hyaluronic Acid 2% + B5",
@@ -116,10 +116,10 @@ let productList = [
         stock: 20,
         target: "Dryness",
         suited: "All Skin Types",
-        concern: ["Signs Of Aging", "Crow's Feet", "Cleansing"],
-        ingredient: ["Hydrators", "Hyaluronic Acid"],
+        concern: "Crow's Feet",
+        ingredient: "Hyaluronic Acid",
         productType: "tones",
-        timeOfUse: ["PM"]
+        timeOfUse: "PM"
     },
     {
         name: "Glycolic Acid 7% Toning Solution",
@@ -129,8 +129,8 @@ let productList = [
         stock: 13,
         target: "Signs Of Aging",
         suited: "All Skin Types",
-        concern: ["look Of Redness", "Uneven Skin Tone"],
-        ingredient: ["Squalane"],
+        concern: "Uneven Skin Tone",
+        ingredient: "Squalane",
         productType: "Moisturizers",
     },
     {
@@ -141,10 +141,10 @@ let productList = [
         stock: 7,
         target: "Cleansing",
         suited: "All Skin Types",
-        concern: ["look Of Redness", "Uneven Skin Tone"],
-        ingredient: ["Peptides", "Hydrators", "Niaciamide"],
+        concern: "Uneven Skin Tone",
+        ingredient: "Niaciamide",
         productType: "Facial Cleansers",
-        timeOfUse: ["AM", "PM"]
+        timeOfUse: "PM",
     },
     {
         name: "Niacinamide 10% + Zinc 1%",
@@ -154,10 +154,10 @@ let productList = [
         stock: 3,
         target: "Textural Irregularities",
         suited: "All Skin Types",
-        concern: ["Visible Shine", "look Of Redness"],
-        ingredient: ["Hyaluronic Acid", "Hydrators"],
+        concern: "look Of Redness",
+        ingredient: "Hyaluronic Acid",
         productType: "tones",
-        timeOfUse: ["AM", "PM"]
+        timeOfUse: "AM",
     },
     {
         name: "Niacinamide 10% + Zinc 1%",
@@ -167,10 +167,10 @@ let productList = [
         stock: 3,
         target: "Textural Irregularities",
         suited: "All Skin Types",
-        concern: ["Dryness", "Puffiness"],
-        ingredient: ["Peptides", "Hydrators", "Niaciamide"],
+        concern: "Dryness",
+        ingredient: "Peptides",
         productType: "serums",
-        timeOfUse: ["AM", "PM"]
+        timeOfUse: "AM & PM",
     },
     {
         name: "Azelaic Acid Suspension 10%",
@@ -180,10 +180,10 @@ let productList = [
         stock: 13,
         target: "Signs Of Aging",
         suited: "All Skin Types",
-        concern: ["look Of Redness", "Crow's Feet"],
-        ingredient: ["Niaciamide", "Hyaluronic Acid", "Squalane"],
+        concern: "Crow's Feet",
+        ingredient: "Niaciamide",
         productType: "tones",
-        timeOfUse: ["AM", "PM"]
+        timeOfUse: "PM",
     },
     {
         name: "Multi-Peptide Eye Serum",
@@ -193,10 +193,10 @@ let productList = [
         stock: 7,
         target: "Signs Of Aging",
         suited: "All Skin Types",
-        concern: ["Uneven Skin Tone", "Visible Shine"],
-        ingredient: ["Peptides", "Hydrators", "Niaciamide", "Hyaluronic Acid"],
+        concern: "Visible Shine",
+        ingredient: "Hyaluronic Acid",
         productType: "serums",
-        timeOfUse: ["AM"]
+        timeOfUse: "AM",
     },
     {
         name: "Multi-Peptide + Copper Peptides 1% Serum",
@@ -206,10 +206,10 @@ let productList = [
         stock: 9,
         target: "Signs Of Aging",
         suited: "All Skin Types",
-        concern: ["Crow's Feet", "Signs Of Congestion"],
-        ingredient: ["Squalane", "Hyaluronic Acid"],
+        concern: "Crow's Feet",
+        ingredient: "Hyaluronic Acid",
         productType: "serums",
-        timeOfUse: ["AM", "PM"]
+        timeOfUse: "PM",
     },
     {
         name: "Core Regimen",
@@ -219,10 +219,10 @@ let productList = [
         stock: 9,
         target: "Signs Of Aging",
         suited: "All Skin Types",
-        concern: ["Crow's Feet", "Signs Of Congestion"],
-        ingredient: ["Squalane", "Hyaluronic Acid"],
+        concern: "Signs Of Congestion",
+        ingredient: "Squalane",
         productType: "serums",
-        timeOfUse: ["AM", "PM"]
+        timeOfUse: "AM & PM",
     },
     {
         name: "Support Regimen",
@@ -232,10 +232,10 @@ let productList = [
         stock: 7,
         target: "Signs Of Aging",
         suited: "All Skin Types",
-        concern: ["Uneven Skin Tone", "Visible Shine"],
-        ingredient: ["Peptides", "Hydrators", "Niaciamide", "Hyaluronic Acid"],
+        concern: "Uneven Skin Tone",
+        ingredient: "Hyaluronic Acid",
         productType: "serums",
-        timeOfUse: ["AM", "PM"]
+        timeOfUse: "PM",
     },
     {
         name: "Survival",
@@ -245,10 +245,10 @@ let productList = [
         stock: 3,
         target: "Textural Irregularities",
         suited: "All Skin Types",
-        concern: ["Dryness", "Puffiness"],
-        ingredient: ["Peptides", "Hydrators", "Niaciamide"],
+        concern: "Puffiness",
+        ingredient: "Hydrators",
         productType: "serums",
-        timeOfUse: ["AM", "PM"]
+        timeOfUse: "PM"
     },
     {
         name: "Yesti",
@@ -258,10 +258,10 @@ let productList = [
         stock: 15,
         target: "Dryness",
         suited: "All Skin Types",
-        concern: ["Dullness", "Texttural Irregularities"],
-        ingredient: ["Peptides", "Niaciamide"],
+        concern: "Texttural Irregularities",
+        ingredient: "Peptides",
         productType: "serums",
-        timeOfUse: ["AM"]
+        timeOfUse: "AM",
     },
     {
         name: "Shizen Sets",
@@ -271,10 +271,10 @@ let productList = [
         stock: 3,
         target: "Textural Irregularities",
         suited: "All Skin Types",
-        concern: ["Dryness", "Puffiness"],
-        ingredient: ["Peptides", "Hydrators", "Niaciamide"],
+        concern: "Puffiness",
+        ingredient: "Hydrators",
         productType: "serums",
-        timeOfUse: ["AM", "PM"]
+        timeOfUse: "PM",
     },
     {
         name: "Eye",
@@ -284,24 +284,27 @@ let productList = [
         stock: 7,
         target: "Signs Of Aging",
         suited: "All Skin Types",
-        concern: ["Uneven Skin Tone", "Visible Shine"],
-        ingredient: ["Peptides", "Hydrators", "Niaciamide", "Hyaluronic Acid"],
+        concern: "Uneven Skin Tone",
+        ingredient: "Hyaluronic Acid",
         productType: "serums",
-        timeOfUse: ["AM", "PM"]
+        timeOfUse: "PM",
     },
-
-
-
-
 
 ];
 
 
 
 // Lưu sản phẩm trên local
-localStorage.setItem("productList", JSON.stringify(productList));
 let products = JSON.parse(localStorage.getItem("productList"));
+if (products == null) {
+    localStorage.setItem("productList", JSON.stringify(productList));
+}
+
 function renderProducts(productList) {
+    const VND = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+    });
     if (productList == undefined) {
         productList = [];
     }
@@ -313,7 +316,7 @@ function renderProducts(productList) {
                 <img src="${productList[i].src}" alt="">
                 <p>${productList[i].name}</p>
                 <p> ${VND.format(productList[i].price)} </p>
-                <i onclick="addToCart(${productList[i].id})" class="fa-solid fa-cart-arrow-down"></i>
+                <i onclick="addToCart(${productList[i].id})" class="fa-solid fa-cart-arrow-down "></i>
                 <hr>
                 <ul>
                     <li>
@@ -393,4 +396,58 @@ function myFunction(lan) {
         document.getElementsByClassName("grid-container")[0].innerHTML = text;
     }
 
+}
+
+//  Funtion Filter
+
+function pickCategoly() {
+    let concern = document.querySelectorAll(".concern");
+    let activeIngredient = document.querySelectorAll(".active-ingredient");
+    let productType = document.querySelectorAll(".product-type");
+    let timeOfUse = document.querySelectorAll(".time-of-use");
+    let selecttedConcern = [];
+    let selecttedActiveIngredient = [];
+    let selecttedProductType = [];
+    let selecttedTimeOfUse = [];
+
+    concern.forEach(checkbox => {
+        if (checkbox.checked) {
+            selecttedConcern.push(checkbox.value);
+        }
+    })
+    activeIngredient.forEach(checkbox => {
+        if (checkbox.checked) {
+            selecttedActiveIngredient.push(checkbox.value);
+        }
+    })
+    productType.forEach(checkbox => {
+        if (checkbox.checked) {
+            selecttedProductType.push(checkbox.value);
+        }
+    })
+    timeOfUse.forEach(checkbox => {
+        if (checkbox.checked) {
+            selecttedTimeOfUse.push(checkbox.value);
+        }
+    })
+
+    if (selecttedConcern.length == 0
+        && selecttedActiveIngredient.length == 0
+        && selecttedProductType.length == 0
+        && selecttedTimeOfUse.length == 0) {
+        renderProducts(products);
+    } else {
+        let filteredProducts = products.filter((product) => {
+            let concernResult = selecttedConcern == 0 ||
+                selecttedConcern.includes(product.concern);
+            let activeIngredientResult = selecttedActiveIngredient == 0 ||
+                selecttedActiveIngredient.includes(product.ingredient);
+            let productTypeResult = selecttedProductType == 0 ||
+                selecttedProductType.includes(product.productType);
+            let timeOfUseResult = selecttedTimeOfUse == 0 ||
+                selecttedTimeOfUse.includes(product.timeOfUse);
+            return concernResult && activeIngredientResult && productTypeResult && timeOfUseResult;
+        })
+        renderProducts(filteredProducts);
+    }
 }

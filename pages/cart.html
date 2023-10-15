@@ -40,7 +40,7 @@
                             <a style="color: white;" href="./cart.html">
                                 <i class="fa-solid fa-cart-shopping">
                                 </i>
-                                <sup class="count js-count">10</sup>
+                                <sup class="count js-count"></sup>
                             </a>
                         </div>
                         <div class="header_user">
@@ -78,13 +78,27 @@
                         </li>
                     </ul>
                 </div>
-                
+
             </div>
         </div>
         </div>
     </header>
+    <div id="search-navbar">
+        <div class="modal-search">
+            <div class="d-flex justify-content-between fs-3 fw-bolder font-monospace">
+                <p>Search</p>
+                <p class="close-btn"><i onclick="closeSearch()" class="fa-solid fa-xmark"></i></p>
+            </div>
+            <div class="modal-ipt-search">
+                <input id="search" type="search" placeholder="Search">
+                <i onclick="searchProduct()" class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div id="search-result"></div>
+        </div>
+    </div>
 
-    
+
+
 
     <!--================================================================MAIN AREA===========================================================================-->
     <main>
@@ -146,10 +160,7 @@
                         </div> -->
 
                     </div>
-                    <a href="../pages/checkout.html">
-                        <input class="checkout" type="button" value="CHECK OUT">
-                    </a>
-
+                    <input onclick="checkOut()" class="checkout" type="button" value="CHECK OUT">
                 </div>
             </div>
 
@@ -236,7 +247,8 @@
     <script src="../js/islogin.js"></script>
     <!-- Link logout.js -->
     <script src="../js/logout.js"></script>
-
+    <!-- LInk showCart.js -->
+    <script src="../js/showCart.js"></script>
 
 </body>
 

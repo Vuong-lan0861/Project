@@ -81,6 +81,20 @@
         </div>
         </div>
     </header>
+    <div id="search-navbar">
+        <div class="modal-search">
+            <div class="d-flex justify-content-between fs-3 fw-bolder font-monospace">
+                <p>Search</p>
+                <p class="close-btn"><i onclick="closeSearch()" class="fa-solid fa-xmark"></i></p>
+            </div>
+            <div class="modal-ipt-search">
+                <input id="search" type="search" placeholder="Search">
+                <i onclick="searchProduct()" class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div id="search-result"></div>
+        </div>
+    </div>
+
     <!-- Main Area -->
     <main>
 

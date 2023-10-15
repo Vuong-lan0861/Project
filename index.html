@@ -33,13 +33,14 @@
                     </div>
 
                     <div class="header__list-icon">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <i onclick="openSearch()" class="fa-solid fa-magnifying-glass"></i>
 
                         <div id="cart" class="cart">
                             <a style="color: white;" href="./pages/cart.html">
                                 <i class="fa-solid fa-cart-shopping">
-                                    <sup class="count"></sup>
                                 </i>
+                                <sup class="count js-count">10</sup>
                             </a>
                         </div>
                         <div class="header_user">
@@ -47,10 +48,10 @@
                             <div class="header_user_hover">
                                 <div id="loginRegister" class="login-register">
                                     <a href="./pages/login.html">Login</a>
-                                    <!-- <a href="./pages/register.html">Register</a> -->
+                                    <!-- <a href="./register.html">Register</a> -->
                                 </div>
                                 <div id="logout" class="logout">
-                                    <p onclick="logOut()" >Log out</p>
+                                    <a onclick="logOut()" href="./pages/login.html">Log out</a>
                                 </div>
                             </div>
                         </div>
@@ -70,18 +71,35 @@
                             <a class="nav-link-custom nav-link" href="../pages/ListProduct.html">Collections</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link-custom nav-link" href="./pages/Gifts.html">Gift</a>
+                            <a class="nav-link-custom nav-link" href="../pages/Gifts.html">Gift</a>
                         </li>
                         <li id="addmin" class="addmin nav-item">
                             <a class="nav-link-custom nav-link" href="../pages/addminpage.html">Admin</a>
                         </li>
                     </ul>
+
                 </div>
+
             </div>
         </div>
         </div>
     </header>
+    <div id="search-navbar">
+        <div class="modal-search">
+            <div class="d-flex justify-content-between fs-3 fw-bolder font-monospace">
+                <p>Search</p>
+                <p class="close-btn"><i onclick="closeSearch()" class="fa-solid fa-xmark"></i></p>
+            </div>
+            <div class="modal-ipt-search">
+                <input id="search" type="search" placeholder="Search">
+                <i onclick="searchProduct()" class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div id="search-result"></div>
+        </div>
+    </div>
+
     <!-- End Header Area -->
+
 
     <!-- Start Main Area -->
     <main class="main">

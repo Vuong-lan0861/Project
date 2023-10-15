@@ -63,11 +63,12 @@
 .header .header__topbar .header__list-icon .header_user .login-register,
 .logout {
     position: absolute;
+    /* Nền đậm */
     z-index: 100;
     background-color: #0b0b0b;
     right: 13px;
     /* border: solid 1px rgba(0, 0, 0, 0.929); */
-    top: 51px;
+   
     padding: 8px 16px;
     display: flex;
     flex-direction: column;
@@ -110,7 +111,7 @@
     display: none;
 }
 
-.header .header__topbar .header__list-icon .header_user .header_user_hover::before {
+/* .header .header__topbar .header__list-icon .header_user .header_user_hover::before {
     content: "";
     border-top: 12px solid transparent;
     border-bottom: 12px solid #070707;
@@ -119,12 +120,12 @@
     position: absolute;
     top: 27px;
     left: 80px;
-}
+} */
 
 
 
 .header .header__topbar .header__list-icon .header_user .login-register a:hover {
-    color: rgb(0, 255, 13);
+    color: #0d6efd;
 }
 
 .header__bottombar {
@@ -219,5 +220,5 @@
 
 ul li {
     list-style-type: none;
-    font-size: 12px;
+    font-size: 20px;
 }

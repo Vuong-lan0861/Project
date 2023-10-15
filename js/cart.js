@@ -3,13 +3,14 @@
 
 
 // convert định dạng tiền tệ
-const VND = new Intl.NumberFormat('vi-VN', {
-    style: 'currency',
-    currency: 'VND',
-});
+
 function renderCart() {
+    const VND = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND',
+    });
     let checkLogin = localStorage.getItem("usersId");
-    console.log(checkLogin);
+
     let users = JSON.parse(localStorage.getItem("users"));
     if (checkLogin != null) {
         for (let i = 0; i < users.length; i++) {
@@ -93,8 +94,7 @@ renderCart();
 
 // function tăng số lượng sản phẩm
 function cartPlus(productId) {
-    // console.log("1111", productId);
-    let checkLogin = localStorage.getItem("userId");
+    let checkLogin = localStorage.getItem("usersId");
     let users = JSON.parse(localStorage.getItem("users"));
     if (checkLogin != null) {
         for (let i = 0; i < users.length; i++) {
@@ -115,7 +115,7 @@ function cartPlus(productId) {
 // Function giảm số lượng sản phẩm
 function cartMinus(productId) {
     // console.log("1111", productId);
-    let checkLogin = localStorage.getItem("userId");
+    let checkLogin = localStorage.getItem("usersId");
     let users = JSON.parse(localStorage.getItem("users"));
     if (checkLogin != null) {
         for (let i = 0; i < users.length; i++) {
@@ -137,8 +137,7 @@ function cartMinus(productId) {
 }
 // Function xoá sản phẩm
 function cartRemove(productId) {
-    // console.log("1111", productId);
-    let checkLogin = localStorage.getItem("userId");
+    let checkLogin = localStorage.getItem("usersId");
     let users = JSON.parse(localStorage.getItem("users"));
     if (checkLogin != null) {
         for (let i = 0; i < users.length; i++) {
@@ -159,5 +158,22 @@ function cartRemove(productId) {
 
 
 
+// Funtion checkOut khi mua hang
 
+function checkOut() {
+    let checkLogin = localStorage.getItem("usersId");
+    let users = JSON.parse(localStorage.getItem("users"));
+    if (checkLogin != null) {
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].id == checkLogin) {
+                users[i].cart = [];
+            }
+        }
+        localStorage.setItem("users",JSON.stringify(users));
+    }
+    alert("BẠN ĐÃ THANH TOÁN THÀNH CÔNG");
+    renderCart();
+    showCount();
+    
+}
 

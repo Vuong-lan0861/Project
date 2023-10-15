@@ -87,7 +87,7 @@
     </header>
     <div id="search-navbar">
         <div class="modal-search">
-            <div class="d-flex justify-content-between fs-3 fw-bolder font-monospace">
+            <div class="d-flex justify-content-between fs-3  font-monospace">
                 <p>Search</p>
                 <p class="close-btn"><i onclick="closeSearch()" class="fa-solid fa-xmark"></i></p>
             </div>
@@ -98,7 +98,7 @@
             <div id="search-result"></div>
         </div>
     </div>
-    
+
     <!-- Main Area -->
     <main>
         <div class="container">
@@ -122,30 +122,32 @@
                         </div>
                         <form class="check-list collapse multi-collapse" id="multiCollapseExample1">
                             <!-- ...Thêm checkbox items 1-13 ở đây... -->
-                            <label for="item1"><input type="checkbox" id="item1" name="items" value="Item 1">
+                            <label for="item1"><input onchange="pickCategoly()" type="checkbox" id="item1" class="concern" value="Dullness">
                                 Dullness</label><br>
-                            <label for="item2"><input type="checkbox" id="item2" name="items" value="Item 2"> Texttural
+                            <label for="item2"><input onchange="pickCategoly()" type="checkbox" id="item2" class="concern"
+                                    value="Texttural Irregularities"> Texttural
                                 Irregularities</label><br>
-                            <label for="item3"><input type="checkbox" id="item3" name="items" value="Item 3"> Signs Of
-                                Aging</label><br>
-                            <label for="item4"><input type="checkbox" id="item4" name="items" value="Item 4">
+                            <label for="item3"><input onchange="pickCategoly()" type="checkbox" id="item3" class="concern" value="Signs Of Aging">
+                                Signs Of Aging</label><br>
+                            <label for="item4"><input onchange="pickCategoly()" type="checkbox" id="item4" class="concern" value="Dryness">
                                 Dryness</label><br>
-                            <label for="item5"><input type="checkbox" id="item5" name="items" value="Item 5"> Uneven
-                                Skin Tone</label><br>
-                            <label for="item7"><input type="checkbox" id="item5" name="items" value="Item 7">
+                            <label for="item5"><input onchange="pickCategoly()" type="checkbox" id="item5" class="concern" value="Uneven
+                                Skin Tone"> Uneven Skin Tone</label><br>
+                            <label for="item6"><input onchange="pickCategoly()" type="checkbox" id="item6" class="concern" value="Puffiness">
                                 Puffiness</label><br>
-                            <label for="item8"><input type="checkbox" id="item5" name="items" value="Item 8"> Dark
+                            <label for="item7"><input onchange="pickCategoly()" type="checkbox" id="item7" class="concern" value="Dark
+                                Circles"> Dark
                                 Circles</label><br>
-                            <label for="item9"><input type="checkbox" id="item5" name="items" value="Item 9"> Visible
-                                Shine</label><br>
-                            <label for="item10"><input type="checkbox" id="item5" name="items" value="Item 10"> Crow's
-                                Feet</label><br>
-                            <label for="item11"><input type="checkbox" id="item5" name="items" value="Item 11">
+                            <label for="item8"><input onchange="pickCategoly()" type="checkbox" id="item8" class="concern" value="Visible Shine">
+                                Visible Shine</label><br>
+                            <label for="item9"><input onchange="pickCategoly()" type="checkbox" id="item9" class="concern" value="Crow's Feet">
+                                Crow's Feet</label><br>
+                            <label for="item10"><input onchange="pickCategoly()" type="checkbox" id="item10" class="concern" value="Cleansing">
                                 Cleansing</label><br>
-                            <label for="item12"><input type="checkbox" id="item5" name="items" value="Item 12"> Look Of
-                                Redness</label><br>
-                            <label for="item13"><input type="checkbox" id="item5" name="items" value="Item 13"> Signs Of
-                                Congestion</label><br>
+                            <label for="item11"><input onchange="pickCategoly()" type="checkbox" id="item11" class="concern"
+                                    value="Look Of Redness"> Look Of Redness</label><br>
+                            <label for="item12"><input onchange="pickCategoly()" type="checkbox" id="item12" class="concern"
+                                    value="Signs Of Congestion"> Signs Of Congestion</label><br>
 
                         </form>
                         <hr>
@@ -156,17 +158,21 @@
                         </div>
                         <form class="check-list collapse" id="collapseExample">
                             <!-- ...Thêm checkbox items 14-18 ở đây... -->
-                            <label for="item14"><input type="checkbox" id="item14" name="items" value="Item 14">
+                            <label for="item13"><input onchange="pickCategoly()" type="checkbox" id="item13" class="active-ingredient"
+                                    value="Peptides">
                                 Peptides</label><br>
-                            <label for="item15"><input type="checkbox" id="item15" name="items" value="Item 15">
+                            <label for="item14"><input onchange="pickCategoly()" type="checkbox" id="item14" class="active-ingredient"
+                                    value="Hydrators">
                                 Hydrators</label><br>
-                            <label for="item16"><input type="checkbox" id="item16" name="items" value="Item 16">
+                            <label for="item15"><input onchange="pickCategoly()" type="checkbox" id="item15" class="active-ingredient"
+                                    value="Niaciamide">
                                 Niaciamide</label><br>
-                            <label for="item17"><input type="checkbox" id="item17" name="items" value="Item 17">
+                            <label for="item16"><input onchange="pickCategoly()" type="checkbox" id="item16" class="active-ingredient"
+                                    value="Hyaluronic Acid">
                                 Hyaluronic Acid</label><br>
-                            <label for="item18"><input type="checkbox" id="item18" name="items" value="Item 18">
+                            <label for="item17"><input onchange="pickCategoly()" type="checkbox" id="item17" class="active-ingredient"
+                                    value="Squalane">
                                 Squalane</label><br>
-
                         </form>
                         <hr>
                         <div class="check-list-title">
@@ -178,12 +184,12 @@
 
                         <form class="check-list collapse multi-collapse" id="multiCollapseExample2">
                             <!-- ...Thêm checkbox items 19-23 ở đây... -->
-                            <label for="item19"><input type="checkbox" id="item19" name="items"
-                                    value="Item 19">serums</label><br>
-                            <label for="item20"><input type="checkbox" id="item20" name="items"
-                                    value="Item 20">tones</label><br>
-                            <label for="item21"><input type="checkbox" id="item21" name="items" value="Item 21">Facial
-                                Cleansers</label><br>
+                            <label for="item18"><input onchange="pickCategoly()" type="checkbox" id="item18" class="product-type"
+                                    value="serums">serums</label><br>
+                            <label for="item19"><input onchange="pickCategoly()" type="checkbox" id="item19" class="product-type"
+                                    value="tones">tones</label><br>
+                            <label for="item20"><input onchange="pickCategoly()" type="checkbox" id="item20" class="product-type" value="Facial
+                                Cleansers">Facial Cleansers</label><br>
 
                         </form>
 
@@ -197,20 +203,21 @@
 
                         <form class="check-list collapse multi-collapse" id="multiCollapseExample3">
                             <!-- ...Thêm checkbox items 19-23 ở đây... -->
-                            <label for="item19"><input type="checkbox" id="item19" name="items" value="Item 19">
+                            <label for="item22"><input onchange="pickCategoly()" type="checkbox" id="item22" class="time-of-use" value="AM">
                                 AM</label><br>
-                            <label for="item20"><input type="checkbox" id="item20" name="items" value="Item 20">
+                            <label for="item23"><input onchange="pickCategoly()" type="checkbox" id="item23" class="time-of-use" value="PM">
                                 PM</label><br>
-
+                            <label for="item24"><input onchange="pickCategoly()" type="checkbox" id="item24" class="time-of-use" value="AM & PM">
+                                AM & PM</label><br>
                         </form>
                         <!-- Tiếp tục thêm các form khác ở đây... -->
                     </div>
                 </div>
 
-                <!-- Best Sllers html -->
+                <!-- Best Sellers html -->
                 <div class="main-right col-10">
                     <div class="main-right-top d-flex justify-content-between">
-                        <h2>Best Sllers</h2>
+                        <h2>Best Sellers</h2>
                         <!-- <button class="btn-sortBy btn-primary" type="button" data-bs-toggle="collapse"
                             data-bs-target="#multiCollapseExample4" aria-expanded="false"
                             aria-controls="multiCollapseExample4">Sort by<i
@@ -416,8 +423,6 @@
             </div>
         </div>
         </div>
-
-
     </main>
     <!-- Footer Area -->
     <footer>
