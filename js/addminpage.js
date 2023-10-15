@@ -62,7 +62,7 @@ function renderProducts() {
 
   let text = "";
   for (let i = 0; i < productList.length; i++) {
-    
+
     text += `
                 
                     <tr>
@@ -75,7 +75,7 @@ function renderProducts() {
                         <td>${productList[i].stock}</td>
                         <td>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">
-                        <i onclick="saveEditedProduct(${productList[i].id})" class="fa-solid fa-pen-to-square"></i>
+                        <i onclick="updateProduct(${productList[i].id})" class="fa-solid fa-pen-to-square"></i>
                         </button>
 <div class="js-modal modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -100,7 +100,7 @@ function renderProducts() {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button onclick = "saveEdit(${productList[i].id})" type="button" class="js-btn-save btn btn-primary">Save</button>
+        <button onclick = "saveUpdateProduct(${productList[i].id})" type="button" class="js-btn-save btn btn-primary">Save</button>
       </div>
     </div>
   </div>
@@ -115,7 +115,7 @@ function renderProducts() {
     `
             ${text}
             `
-            
+
 }
 // Thêm chức năng xoá users theo id
 function deleteUsers(userId) {
@@ -148,8 +148,8 @@ function deleteProducts(productId) {
 }
 // function chỉnh sửa product theo id
 
-function saveEditedProduct(productId) {
-  
+function updateProduct(productId) {
+
   localStorage.setItem("keyEdit", productId)
   let productList = JSON.parse(localStorage.getItem("productList"));
   // Tìm vị trí sản phẩm trong danh sách
@@ -158,60 +158,36 @@ function saveEditedProduct(productId) {
   price.value = productList[productIndex].price;
   let stock = document.getElementsByClassName("stock")[0];
   stock.value = productList[productIndex].stock;
-// document.querySelector(".js-btn-save").addEventListener("click",()=>{
-//   console.log("gygui");
-//   let keyEdit = localStorage.getItem("keyEdit");
-//     console.log(keyEdit);
-    
-//     let price = document.getElementsByClassName("price")[0].value;
-//     let stock = document.getElementsByClassName("stock")[0].value;
-//     if (keyEdit != null) {
-//       let productList = JSON.parse(localStorage.getItem("productList"));
-//       let productIndex = productList.findIndex(product => product.id == keyEdit);
-//       console.log(productIndex);
-      
-//       productList[productIndex].stock = stock;
-//       productList[productIndex].price = price;
-      
-  
-//       localStorage.setItem("productList", JSON.stringify(productList));
-      
-      
-//     }
-//     document.querySelector(".modal-backdrop").classList.remove("show");
-    
-   
-//     renderProducts();
-// })
-  
-
+ 
 }
 
 // FUNCTION SAVE EDIT
 
-function saveEdit(productId) {
+function saveUpdateProduct(productId) {
 
   let keyEdit = localStorage.getItem("keyEdit");
-  console.log(keyEdit);
-  
+ 
+
   let price = document.getElementsByClassName("price")[0].value;
   let stock = document.getElementsByClassName("stock")[0].value;
   if (keyEdit != null) {
     let productList = JSON.parse(localStorage.getItem("productList"));
     let productIndex = productList.findIndex(product => product.id == keyEdit);
-    console.log(productIndex);
-    
+
     productList[productIndex].stock = stock;
     productList[productIndex].price = price;
-    
+
 
     localStorage.setItem("productList", JSON.stringify(productList));
-    
-    
+
+
   }
-  document.querySelector(".modal-backdrop").classList.remove("show");
-  
- 
+  let show = document.getElementsByClassName("show");
+  for (let i = 0; i < show.length; i++) {
+    show[i].style.display = "none";
+  }
+
+
   renderProducts();
-  // localStorage.removeItem("keyEdit");
+  
 }

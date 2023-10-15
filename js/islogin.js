@@ -35,7 +35,7 @@ window.onscroll = () => {
 
 function IsLogged() {
     let checkLogin = localStorage.getItem("usersId");
-    console.log(checkLogin);
+
     let users = JSON.parse(localStorage.getItem("users"));
 
     if (checkLogin != null) {
@@ -64,24 +64,63 @@ function IsLogged() {
         document.getElementById("loginRegister").style.display = "block";
     }
 }
+window.onload = IsLogged;
 
 // ===========Seach================
 
-let modalSearch = document.querySelector(".modal-search");
+
+let modalSearch = document.querySelector("#search-navbar");
 let closeBtn = document.querySelector(".close-btn");
-
-
+// funtion hiện animetion search
 function openSearch() {
     modalSearch.classList.add("active");
 }
-
+// funtion ẩn animetion search
 function closeSearch() {
     modalSearch.classList.remove("active");
 }
 
+// funtion seach product
+function searchProduct() {
+    // let products = JSON.parse(localStorage.getItem("productList"));
+    let inputValue = document.getElementById("search").value;
+    let result = products.filter((item) => {
+        return item.name.indexOf(inputValue) != -1;
+    })
+
+    let seachResult = document.getElementById("search-result");
+    seachResult.innerHTML = ``
+    if (result.length != 0) {
+        result.forEach(element => {
+            let div = document.createElement("div");
+            div.innerHTML = `
+            <div id="product-image" class="product-image">
+            <div class="d-flex justify-content-between">
+            <img src="${element.src}">
+                <ul>
+                    <li>
+                        SHIZEN
+                        <p class="fw-bolder">${element.name}</p>
+                    </li>
+                    <li>
+                    ${VND.format(element.price)}
+                    </li>
+                </ul>
+            </div>
+            </div>
+            `
+            seachResult.appendChild(div);
+        });
+    }
+    else {
+        renderProducts();
+
+    }
+}
 
 
-window.onload = IsLogged;
+
+
 
 
 
